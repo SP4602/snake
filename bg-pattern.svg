@@ -1,0 +1,40 @@
+<svg width="1600" height="1200" viewBox="0 0 1600 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="1200" fill="#DDF0E4"/>
+  <rect width="1600" height="1200" fill="url(#sky)"/>
+  <circle cx="1290" cy="188" r="72" fill="#FFF7D6" fill-opacity="0.9"/>
+  <circle cx="1290" cy="188" r="108" fill="#FFF7D6" fill-opacity="0.22"/>
+
+  <g opacity="0.85">
+    <path d="M0 764C105 682 214 631 338 628C470 625 586 687 711 687C837 687 937 625 1058 616C1229 603 1408 679 1600 776V1200H0V764Z" fill="#A8D4B4"/>
+    <path d="M0 824C97 746 209 704 347 706C470 708 568 764 683 764C813 764 905 713 1028 699C1228 678 1402 759 1600 867V1200H0V824Z" fill="#7EB792"/>
+    <path d="M0 908C127 823 253 794 385 808C505 821 595 883 703 883C823 883 931 818 1069 801C1270 776 1427 859 1600 952V1200H0V908Z" fill="#4E8E68"/>
+    <path d="M0 995C135 916 282 892 428 908C572 924 664 987 777 987C911 987 1027 919 1179 909C1336 898 1465 953 1600 1037V1200H0V995Z" fill="#2F694A"/>
+  </g>
+
+  <g opacity="0.22">
+    <path d="M205 708C248 665 286 646 343 641C300 679 280 704 253 748C235 738 220 725 205 708Z" fill="#E8F7EC"/>
+    <path d="M672 758C723 711 780 698 846 705C796 736 753 775 723 812C707 799 690 781 672 758Z" fill="#E8F7EC"/>
+    <path d="M1141 700C1191 654 1257 642 1329 657C1286 686 1234 723 1200 764C1179 751 1160 729 1141 700Z" fill="#E8F7EC"/>
+  </g>
+
+  <g opacity="0.28">
+    <ellipse cx="310" cy="262" rx="84" ry="25" fill="white"/>
+    <ellipse cx="370" cy="262" rx="66" ry="19" fill="white"/>
+    <ellipse cx="1032" cy="318" rx="96" ry="28" fill="white"/>
+    <ellipse cx="1102" cy="318" rx="74" ry="21" fill="white"/>
+    <ellipse cx="808" cy="218" rx="70" ry="20" fill="white"/>
+  </g>
+
+  <g opacity="0.1" stroke="#244C37" stroke-width="2">
+    <path d="M0 1042C181 985 319 963 474 976C645 991 742 1050 891 1055C1030 1060 1168 996 1324 988C1450 982 1528 1005 1600 1038"/>
+    <path d="M0 1086C170 1039 295 1021 433 1030C620 1043 729 1094 872 1095C1035 1096 1150 1049 1291 1040C1417 1032 1513 1048 1600 1082"/>
+  </g>
+
+  <defs>
+    <linearGradient id="sky" x1="800" y1="0" x2="800" y2="1200" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#EAF8F0"/>
+      <stop offset="0.5" stop-color="#D7ECDF"/>
+      <stop offset="1" stop-color="#C1DEC9"/>
+    </linearGradient>
+  </defs>
+</svg>
