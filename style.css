@@ -1,17 +1,17 @@
 :root {
-  --bg: #f2e6cf;
-  --panel: rgba(255, 248, 236, 0.82);
-  --panel-border: rgba(100, 70, 35, 0.14);
+  --bg: #f4efe6;
+  --panel: rgba(255, 250, 243, 0.88);
+  --panel-border: rgba(91, 66, 44, 0.16);
   --text: #2f241b;
-  --muted: #74614f;
-  --accent: #d66f31;
-  --accent-dark: #994215;
-  --board: #fbf1dc;
-  --grid: rgba(123, 93, 63, 0.08);
+  --muted: #776555;
+  --accent: #d96b2b;
+  --accent-dark: #a34715;
+  --board: #fff7ea;
+  --grid: rgba(120, 92, 66, 0.08);
   --snake: #2d8f61;
   --snake-head: #166342;
   --food: #d63d3d;
-  --shadow: 0 26px 70px rgba(84, 56, 28, 0.14);
+  --shadow: 0 20px 50px rgba(80, 48, 24, 0.12);
 }
 
 * {
@@ -19,8 +19,6 @@
 }
 
 body {
-  position: relative;
-  overflow: hidden;
   margin: 0;
   min-height: 100vh;
   display: grid;
@@ -29,51 +27,12 @@ body {
   font-family: "Trebuchet MS", "Segoe UI", sans-serif;
   color: var(--text);
   background:
-    linear-gradient(rgba(238, 247, 242, 0.18), rgba(214, 231, 220, 0.3)),
-    url("./bg-pattern.svg"),
-    linear-gradient(135deg, #e8f4ec 0%, #d8eadf 46%, #c5ddcc 100%);
-  background-size: cover, cover, cover;
-  background-position: center, center, center;
-  background-attachment: fixed, fixed, fixed;
-}
-
-body::before,
-body::after {
-  content: "";
-  position: fixed;
-  inset: auto;
-  pointer-events: none;
-}
-
-body::before {
-  top: -120px;
-  left: -80px;
-  width: 420px;
-  height: 420px;
-  border-radius: 42% 58% 50% 50%;
-  background:
-    radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.68), transparent 38%),
-    linear-gradient(180deg, rgba(154, 203, 171, 0.2), rgba(154, 203, 171, 0.02));
-  filter: blur(10px);
-  opacity: 0.68;
-}
-
-body::after {
-  right: -110px;
-  bottom: -140px;
-  width: 460px;
-  height: 460px;
-  border-radius: 58% 42% 60% 40%;
-  background:
-    radial-gradient(circle at 35% 35%, rgba(242, 255, 247, 0.72), transparent 32%),
-    linear-gradient(160deg, rgba(86, 150, 112, 0.18), rgba(86, 150, 112, 0.04));
-  filter: blur(12px);
-  opacity: 0.72;
+    radial-gradient(circle at top left, rgba(217, 107, 43, 0.16), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(45, 143, 97, 0.18), transparent 28%),
+    linear-gradient(135deg, #f7f2e8, #efe4d3);
 }
 
 .game-shell {
-  position: relative;
-  z-index: 1;
   width: min(960px, 100%);
   display: grid;
   grid-template-columns: 320px minmax(320px, 1fr);
@@ -83,7 +42,7 @@ body::after {
 
 .panel,
 .board-wrap {
-  background: rgba(255, 248, 236, 0.76);
+  background: var(--panel);
   backdrop-filter: blur(10px);
   border: 1px solid var(--panel-border);
   border-radius: 24px;
@@ -91,29 +50,10 @@ body::after {
 }
 
 .panel {
-  position: relative;
-  overflow: hidden;
   padding: 28px;
 }
 
-.panel::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(140deg, rgba(255, 255, 255, 0.34), transparent 34%),
-    repeating-linear-gradient(
-      135deg,
-      rgba(125, 95, 55, 0.02) 0,
-      rgba(125, 95, 55, 0.02) 8px,
-      transparent 8px,
-      transparent 16px
-    );
-  pointer-events: none;
-}
-
 .eyebrow {
-  position: relative;
   margin: 0 0 10px;
   color: var(--accent-dark);
   text-transform: uppercase;
@@ -123,7 +63,6 @@ body::after {
 }
 
 h1 {
-  position: relative;
   margin: 0;
   font-size: 36px;
   line-height: 1.05;
@@ -136,7 +75,6 @@ h1 {
 }
 
 .description {
-  position: relative;
   margin: 14px 0 0;
   line-height: 1.6;
 }
@@ -148,13 +86,10 @@ h1 {
 }
 
 .card {
-  position: relative;
   padding: 16px 18px;
   border-radius: 18px;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(255, 249, 240, 0.56));
+  background: rgba(255, 255, 255, 0.68);
   border: 1px solid rgba(91, 66, 44, 0.08);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
 }
 
 .card span {
@@ -183,59 +118,28 @@ button {
   background: linear-gradient(135deg, var(--accent), var(--accent-dark));
   cursor: pointer;
   transition: transform 160ms ease, box-shadow 160ms ease;
-  box-shadow: 0 16px 34px rgba(169, 71, 21, 0.26);
+  box-shadow: 0 14px 30px rgba(169, 71, 21, 0.24);
 }
 
 button:hover {
-  transform: translateY(-1px) scale(1.01);
+  transform: translateY(-1px);
 }
 
 .board-wrap {
-  position: relative;
-  overflow: hidden;
   padding: 20px;
   display: grid;
   justify-items: center;
-  background:
-    linear-gradient(180deg, rgba(255, 252, 246, 0.8), rgba(250, 239, 217, 0.72)),
-    var(--panel);
-}
-
-.board-wrap::before {
-  content: "";
-  position: absolute;
-  inset: 12px;
-  border-radius: 20px;
-  background:
-    radial-gradient(circle at top, rgba(255, 255, 255, 0.6), transparent 44%),
-    repeating-linear-gradient(
-      0deg,
-      rgba(126, 97, 62, 0.03) 0,
-      rgba(126, 97, 62, 0.03) 1px,
-      transparent 1px,
-      transparent 18px
-    );
-  pointer-events: none;
 }
 
 canvas {
-  position: relative;
-  z-index: 1;
   width: min(100%, 520px);
   aspect-ratio: 1;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.26), transparent 18%),
-    var(--board);
+  background: var(--board);
   border-radius: 20px;
   border: 1px solid rgba(91, 66, 44, 0.1);
-  box-shadow:
-    inset 0 2px 10px rgba(255, 255, 255, 0.45),
-    0 22px 40px rgba(90, 62, 31, 0.12);
 }
 
 .hint {
-  position: relative;
-  z-index: 1;
   margin: 14px 0 0;
   font-size: 14px;
 }
